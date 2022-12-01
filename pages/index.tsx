@@ -134,18 +134,10 @@ export default function Home() {
       <ProfileContainer />
       <div className={styles.profileContainer}>
         <p contentEditable={true}>
-          {
-            "All text on this page is editable (just click). Same with the photo."
-          }
+          {"All text is editable (just click). Same with the photo."}
         </p>
       </div>
-      <div className={styles.footerLinks}>
-        <u>
-          <a href="https://www.twitter.com/alexreibman">
-            Made with ❤️ by Alex Reibman
-          </a>
-        </u>
-      </div>
+      <div className={styles.footerLinks}>Made with ❤️ by Alex Reibman</div>
       <div className={styles.footerIcons}>
         <a href="https://www.tiktok.com/@reibsan" className={styles.p}>
           <Image src={tiktok} className={styles.icon} alt="" />
