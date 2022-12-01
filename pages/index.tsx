@@ -57,7 +57,7 @@ const HeadshotPhoto = () => {
 const AgeTitleCompanyHeader = () => (
   <div className={styles.AgeTitleCompany}>
     <div contentEditable={true} lang="klingon" spellCheck={false}>
-      24 | Associate, Sugma Ventures
+      24 | Associate, Ligma Ventures
     </div>
   </div>
 );

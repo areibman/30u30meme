@@ -5,11 +5,8 @@ import Script from "next/script";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-6T68C17J51"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-6T68C17J51" />
+      <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
