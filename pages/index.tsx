@@ -1,5 +1,4 @@
 import { useState } from "react";
-import html2canvas from "html2canvas";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -19,27 +18,14 @@ const fillertext = [
   "Jack Raidon is a healthcare science innovator, entrepreneur, and Forbes 30 Under 30 nominee. He is the CEO and co-founder of Augmedix, a healthcare technology company that uses Google Glass to remotely streamline the patient doctor interaction. Jack graduated from Stanford University in 2014 with a degree in computer science and a minor in Spanish. During his time at Stanford, he was heavily involved in the Entrepreneurship and Healthcare communities, and was involved in a number of health related projects. In 2012, Jack co-founded Augmedix, a company that uses Google Glass to streamline the patient-doctor interaction. The company has raised over $40 million in funding and is now being used by over 250 doctors in five countries",
 ];
 
-const takeScreenshotOfElement = async (element) => {
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  const data = await html2canvas(element, {
-    canvas,
-    logging: false,
-    useCORS: true,
-    allowTaint: true,
-    scale: 1,
-    backgroundColor: null,
-  });
-  return data.toDataURL("image/png");
-};
-
 const HeadshotPhoto = () => {
   const [image, setImage] = useState(headshot);
   const [objectURL, setCreateObjectURL] = useState(null);
 
-  const uploadToClient = (event) => {
+  const uploadToClient = (event: any) => {
     if (event.target.files && event.target.files[0]) {
       const selectedFile = event.target.files[0];
+      //@ts-ignore
       setImage(URL.createObjectURL(selectedFile));
     }
   };
@@ -84,18 +70,9 @@ const NameHeader = () => (
   </h3>
 );
 
-const PillButton = () => (
-  <a
-    className={styles.pillButton}
-    onClick={() =>
-      takeScreenshotOfElement(document.getElementById("rootelement"))
-    }
-  >
-    Full Profile
-  </a>
-);
+const PillButton = () => <a className={styles.pillButton}>Full Profile</a>;
 
-const ProfileInfo = ({ children }) => (
+const ProfileInfo = ({ children }: any) => (
   <div className={styles.profileInfo}>{children}</div>
 );
 
